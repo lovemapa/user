@@ -1,0 +1,20 @@
+#   I've  used the mongodb database for sake of persisting data
+
+
+NOTE:   I  was not able to do payback  and report total dues dues to some time constraints
+
+
+
+
+
+====================FOR Running the query, follow following istructions========================
+
+Suppose for creationg a new merchant run following command
+
+
+node bank.js new merchant m2 m2@merchants.com 1.5%
+ 
+
+and it will display the output
+
+use Control+c and execture the next instruction
