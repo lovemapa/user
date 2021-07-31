@@ -8,6 +8,8 @@ const userRouter = require('./routes/userRoutes')
 dotenv.config()
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.get('/', (req, res) => res.json(200).send({ message: 'Voila app works' }))
 //user Route
 app.use('/user', userRouter)
 
