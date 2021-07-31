@@ -14,7 +14,7 @@ app.get('/', (req, res) => res.send('Voila app works'))
 app.use('/user', userRouter)
 
 //Database connection
-mongoose.connect(`mongodb://localhost/user`,
+mongoose.connect(process.env.DB,
     {
         useUnifiedTopology: true,
         useNewUrlParser: true,
