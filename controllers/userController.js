@@ -83,9 +83,12 @@ class User {
             let searchQuery = {}
 
             if (contact || name) {
-                searchQuery.$or = [
-                    { name: { $regex: escape(name), $options: 'i' } },
-                    { contact: { $regex: escape(contact), $options: 'i' } }]
+
+                searchQuery['$or'] = []
+                if (name)
+                    searchQuery.$or.push({ name: { $regex: escape(name), $options: 'i' } })
+                if (contact)
+                    searchQuery.$or.push({ contact: { $regex: escape(contact), $options: 'i' } })
             }
             const users = await userSchema.find(searchQuery, { password: 0, token: 0 }).sort({ _id: -1 })
 
@@ -98,6 +101,7 @@ class User {
 
 
         } catch (err) {
+            console.log(err)
             return res.status(500).send({ sucess: false, message: err, data: null })
         }
     }
