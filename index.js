@@ -12,7 +12,7 @@ app.use(express.json());
 app.get('/', (req, res) => res.send('Voila app works'))
 //user Route
 app.use('/user', userRouter)
-
+let port = process.env.PORT || 3000
 //Database connection
 mongoose.connect(`mongodb+srv://pawan:Helloworld!23@cluster0.3ivca.mongodb.net/user?retryWrites=true&w=majority`,
     {
@@ -28,6 +28,6 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 
-app.listen(`3000`, () => {
-    console.log("Express server listening on port " + `3000`)
+app.listen(port, () => {
+    console.log("Express server listening on port " + port)
 })
