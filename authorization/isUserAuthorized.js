@@ -13,7 +13,7 @@ module.exports = {
             const token = bearer[1];
             user.findOne({ token: token }).then(result => {
                 if (result) {
-                    jwt.verify(token, process.env.SIGNATURE, (err, decoded) => {
+                    jwt.verify(token, `z+mms^s12#masd1`, (err, decoded) => {
                         req.userId = decoded.userId
                         next()
                     });
