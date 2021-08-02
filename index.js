@@ -14,7 +14,7 @@ app.get('/', (req, res) => res.send('Voila app works'))
 app.use('/user', userRouter)
 
 //Database connection
-mongoose.connect(process.env.DB,
+mongoose.connect(`DB=mongodb+srv://pawan:Helloworld!23@cluster0.3ivca.mongodb.net/user?retryWrites=true&w=majority`,
     {
         useUnifiedTopology: true,
         useNewUrlParser: true,
@@ -28,6 +28,6 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
     console.log("Express server listening on port " + process.env.PORT)
 })

@@ -6,7 +6,7 @@ class helperFunction {
 
     authTokenGenerate(email, userId) {
         return jwt.sign({ email: email, userId: userId },
-            process.env.SIGNATURE, { expiresIn: '24h' }
+            `z+mms^s12#masd1`, { expiresIn: '24h' }
         );
     }
 
