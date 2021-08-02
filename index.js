@@ -14,7 +14,7 @@ app.get('/', (req, res) => res.send('Voila app works'))
 app.use('/user', userRouter)
 
 //Database connection
-mongoose.connect(`DB=mongodb+srv://pawan:Helloworld!23@cluster0.3ivca.mongodb.net/user?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://pawan:Helloworld!23@cluster0.3ivca.mongodb.net/user?retryWrites=true&w=majority`,
     {
         useUnifiedTopology: true,
         useNewUrlParser: true,
