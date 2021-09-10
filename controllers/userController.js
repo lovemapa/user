@@ -13,6 +13,8 @@ class User {
             if (body.password) {
                 body.password = helperClass.hashPassword(body.password)
             }
+            if (body.email)
+                body.email = body.email.toLowerCase()
 
             const newUser = new userSchema(body);
 
@@ -41,10 +43,10 @@ class User {
             const { email, password } = req.body
 
 
-            if (!email || !password) {
+            if (!email.toLowerCase() || !password) {
                 return res.status(400).send({ sucess: false, message: "Email or Password missing", data: null })
             }
-            const doesUserExists = await userSchema.findOne({ email: email })
+            const doesUserExists = await userSchema.findOne({ email: email.toLowerCase() })
 
             if (doesUserExists) {
 
